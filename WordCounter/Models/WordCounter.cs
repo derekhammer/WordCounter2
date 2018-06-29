@@ -7,6 +7,7 @@ namespace WordCounter
     {
       private string _userWord;
       private string _userParagraph;
+      //private static int _wordCount;
 
       //Sets the word to be checked
       public void SetWord (string UserWord)
@@ -28,5 +29,10 @@ namespace WordCounter
       {
         return _userParagraph;
       }
+      public string[] Split ()
+      {
+        return _userParagraph.Split(' ');
+      }
     }
+
 }

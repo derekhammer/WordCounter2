@@ -34,5 +34,22 @@ namespace WordChecker.TestTools
       Assert.AreEqual(result, newParagraph);
       Console.WriteLine(result);
     }
+    [TestMethod]
+    public void UserParagraph_SplitParagraph_True()
+    {
+      string newParagraph = "oh boy, i sure love pizza";
+      string[] array = {"oh", "boy,", "i", "sure", "love", "pizza"};
+      words newWords = new words();
+
+      newWords.SetParagraph(newParagraph);
+      newWords.GetParagraph();
+      string[] result = newWords.Split();
+
+      CollectionAssert.AreEqual(array, result);
+      Console.WriteLine(result);
+    }
+
+
+
   }
 }
