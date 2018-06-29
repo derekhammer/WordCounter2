@@ -6,16 +6,27 @@ namespace WordCounter
   public class words
     {
       private string _userWord;
+      private string _userParagraph;
 
       //Sets the word to be checked
       public void SetWord (string UserWord)
       {
         _userWord = UserWord;
       }
-      //Gets the word to be checked
+      //Gets the word to ge checked
       public string GetWord ()
       {
         return _userWord;
+      }
+
+      public void SetParagraph (string UserParagraph)
+      {
+        _userParagraph = UserParagraph;
+      }
+      //Gets the word to ge checked
+      public string GetParagraph ()
+      {
+        return _userParagraph;
       }
     }
 }

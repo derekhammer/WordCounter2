@@ -20,5 +20,19 @@ namespace WordChecker.TestTools
       //Assert
       Assert.AreEqual(result, newWord);
     }
+
+    [TestMethod]
+    public void UserParagraph_GetParagraph_True()
+    {
+      //Arrange
+      string newParagraph = "oh boy, i sure love pizza";
+      words newWords = new words();
+      //Act
+      newWords.SetParagraph(newParagraph);
+      string result = newWords.GetParagraph();
+      //Assert
+      Assert.AreEqual(result, newParagraph);
+      Console.WriteLine(result);
+    }
   }
 }
