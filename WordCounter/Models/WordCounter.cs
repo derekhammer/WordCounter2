@@ -20,6 +20,10 @@ namespace WordCounter
       {
         return _userWord;
       }
+      public int GetScore()
+      {
+        return _score;
+      }
       //Sets the paragraph
       public void SetParagraph (string UserParagraph)
       {
@@ -31,17 +35,18 @@ namespace WordCounter
         return _userParagraph;
       }
       //splits the user paragraph into an array of words
-      public string[] Split ()
-      {
-        return _userParagraph.Split(' ');
-      }
+      // public string[] Split ()
+      // {
+      //   return _userParagraph.Split(' ');
+      // }
       //compares the array paragraph against the input word
-      public int Compare (string inputWord, string[] inputParagraph)
+      public int Compare ()
       {
+        string[] splitInput = _userParagraph.Split(' ');
         int wordCount =  0;
-            foreach(string word in inputParagraph)
+            foreach(string word in splitInput)
             {
-                if(word == inputWord)
+                if(word == _userWord)
                 {
                     wordCount++;
                 }
@@ -50,21 +55,21 @@ namespace WordCounter
             return _score;
       }
     }
-  public class Program
-  {
-    public static void Main()
-    {
-      Console.WriteLine("Type in a word you want to check for.");
-      string typedWord = Console.ReadLine();
-      Console.WriteLine("Type in a paragraph that we can check for that word.");
-      string typedParagraph = Console.ReadLine();
-      words newWords = new words();
-      newWords.SetWord(typedWord);
-      newWords.SetParagraph(typedParagraph);
-      string testWord = newWords.GetWord();
-      string[] testPara = newWords.Split();
-      int result = newWords.Compare(testWord, testPara);
-      Console.WriteLine("Your word appears " + result + " time(s).");
-    }
-  }
+  // public class Program
+  // {
+  //   public static void Main()
+  //   {
+  //     Console.WriteLine("Type in a word you want to check for.");
+  //     string typedWord = Console.ReadLine();
+  //     Console.WriteLine("Type in a paragraph that we can check for that word.");
+  //     string typedParagraph = Console.ReadLine();
+  //     words newWords = new words();
+  //     newWords.SetWord(typedWord);
+  //     newWords.SetParagraph(typedParagraph);
+  //     string testWord = newWords.GetWord();
+  //     string[] testPara = newWords.Split();
+  //     int result = newWords.Compare(testWord, testPara);
+  //     Console.WriteLine("Your word appears " + result + " time(s).");
+  //   }
+  // }
 }
